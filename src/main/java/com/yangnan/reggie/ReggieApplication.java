@@ -14,4 +14,9 @@ public class ReggieApplication {
         //log.info("项目启动成功");
         log.info("http://localhost:8080/backend/page/login/login.html");
     }
+
+    //解决清空空闲60秒以上的连接，导致”discard long time none received connection“的问题
+    static {
+        System.setProperty("druid.mysql.usePingMethod","false");
+    }
 }
