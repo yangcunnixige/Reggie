@@ -31,4 +31,16 @@ public class GlobaExceptionHandler {
 
         return R.error("失败了");
     }
+
+    /**
+     * 异常处理方法
+     * @param ex
+     * @return
+     */
+    @ExceptionHandler(CustomException.class)
+    public R<String> exceptionHandler(CustomException ex) {
+        log.info(ex.getMessage());
+
+        return R.error(ex.getMessage());
+    }
 }
